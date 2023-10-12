@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Phone Hunter</title>
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@3.9.2/dist/full.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body>
+    <header class="max-w-screen-xl mx-auto mb-10">
+      <h1 class="text-4xl">Phone Hunter</h1>
+    </header>
+    <main class="max-w-screen-xl mx-auto">
+      <!-- search -->
+      <section class="my-10 text-center">
+        <input
+          id="search-field"
+          type="text"
+          placeholder="Type here"
+          class="input input-primary w-full max-w-sm"
+        />
+        <button
+          onclick="handleSearchButton()"
+          class="mt-4 md:mt-0 btn btn-outline btn-primary"
+        >
+          Search
+        </button>
+      </section>
+
+      <!-- Spinner -->
+      <section class="text-center hidden" id="spinner-section">
+        <span class="loading loading-spinner text-primary"></span>
+      </section>
+
+      <!-- card container -->
+      <section
+        class="mt-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4"
+        id="phones-container"
+      ></section>
+      <div class="text-center my-10">
+        <button id="show-all-button" class="hidden btn btn-outline btn-primary">
+          Show All
+        </button>
+      </div>
+
+      <dialog id="phone_details_modal" class="modal">
+        <div class="modal-box">
+          <div class="modal-action">
+            <form method="dialog">
+              <div id="modal-container"></div>
+              <!-- if there is a button in form, it will close the modal -->
+              <div class="text-center mt-4">
+                <button class="btn">Close</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </dialog>
+    </main>
+    <script src="./scripts/scripts.js"></script>
+  </body>
+</html>
